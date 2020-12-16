@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Project2_Eoghan_Spillane</string>
+    <string name="address">Address</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_sign_up">Login/Sign Up</string>
+    <string name="open_basket">Open Basket</string>
+    <string name="homepage">Homepage</string>
+    <string name="string">Stringed</string>
+    <string name="percussion">Percussion</string>
+    <string name="wind">Wind</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="stringed_instuments">Stringed Instuments</string>
+    <string name="percussion_instuments">Percussion Instuments</string>
+    
+    <string-array name="InstrumentsStringNames">
+        <item>Violin</item>
+        <item>Piano</item>
+        <item>HurdyGurdy</item>
+        <item>Guitar</item>
+        <item>Cello</item>
+    </string-array>
+
+    <string-array name="InstrumentStringCode">
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <string-array name="InstrumentStringPrice">
+        <item>300</item>
+        <item>500</item>
+        <item>250</item>
+        <item>75</item>
+        <item>350</item>
+    </string-array>
+</resources>
