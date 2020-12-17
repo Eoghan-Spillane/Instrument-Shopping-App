@@ -19,19 +19,13 @@ import com.google.android.material.tabs.TabLayout;
 
 public class HomepageActivity extends AppCompatActivity {
 
-//    //String Instrument
-//    String sName[], sCode[], sPrice[];
-//    int sImages[] = {R.drawable.sviolin, R.drawable.spiano, R.drawable.shurdygurdy, R.drawable.sguitar, R.drawable.scello};
-//    RecyclerView RecyclerString;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-
-        Fragment stringFragment = new StringFragment(findViewById(R.id.fragmentRecyclerString));
-
-
 
         // Tabs Layout and Fragments
         TabLayout tabLayout = findViewById(R.id.tabBar);
@@ -40,10 +34,8 @@ public class HomepageActivity extends AppCompatActivity {
         TabItem tabWind = findViewById(R.id.InstrumentsWind);
         ViewPager viewPager = findViewById(R.id.viewPager);
 
-        //This allows the page to be swiped left and right to change the tab
-        @SuppressLint("CutPasteId") PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount(), findViewById(R.id.fragmentRecyclerString));
 
-        viewPager.setAdapter(pagerAdapter);
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -62,14 +54,9 @@ public class HomepageActivity extends AppCompatActivity {
             }
         });
 
-//        // String Fragment
-//        RecyclerString = findViewById(R.id.fragmentRecyclerString);
-//        sName = getResources().getStringArray(R.array.InstrumentsStringNames);
-//        sCode = getResources().getStringArray(R.array.InstrumentStringCode);
-//        sPrice = getResources().getStringArray(R.array.InstrumentStringPrice);
-//        MyStringAdapter myStringAdapter = new MyStringAdapter(this, sName, sCode, sPrice, sImages);
-//        RecyclerString.setAdapter(myStringAdapter);
-//        RecyclerString.setLayoutManager(new LinearLayoutManager(this));
+        //This allows the page to be swiped left and right to change the tab
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
     }
 
     @Override

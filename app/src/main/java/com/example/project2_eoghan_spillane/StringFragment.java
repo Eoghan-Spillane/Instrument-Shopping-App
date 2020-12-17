@@ -12,33 +12,35 @@ import android.view.ViewGroup;
 
 
 public class StringFragment extends Fragment {
+
     //String Instrument
     String sName[], sCode[], sPrice[];
     int sImages[] = {R.drawable.sviolin, R.drawable.spiano, R.drawable.shurdygurdy, R.drawable.sguitar, R.drawable.scello};
-    RecyclerView RecyclerString;
+    private RecyclerView RecyclerString;
+    View viewString;
 
-    private View listItemsView;
-
-    public StringFragment(RecyclerView f) {
-        RecyclerString = f;
+    public StringFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        listItemsView = inflater.inflate(R.layout.fragment_string, container, false);
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+    }
 
-        // String Fragment
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         sName = getResources().getStringArray(R.array.InstrumentsStringNames);
         sCode = getResources().getStringArray(R.array.InstrumentStringCode);
         sPrice = getResources().getStringArray(R.array.InstrumentStringPrice);
 
+        viewString = inflater.inflate(R.layout.fragment_string, container, false);
+        RecyclerString = viewString.findViewById(R.id.fragmentRecyclerString);
 
-        MyStringAdapter myStringAdapter = new MyStringAdapter(getContext(), sName, sCode, sPrice, sImages);
-        RecyclerString.setAdapter(myStringAdapter);
+        MyItemAdapter myItemAdapter = new MyItemAdapter(getContext(), sName, sCode, sPrice, sImages);
+        RecyclerString.setAdapter(myItemAdapter);
         RecyclerString.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return viewString;
     }
 }

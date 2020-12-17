@@ -11,10 +11,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     private int numOfTabs;
     private TabLayout tabs;
-    RecyclerView f;
 
 
-    public PagerAdapter(FragmentManager fm, int numOfTabs, RecyclerView f){
+    public PagerAdapter(FragmentManager fm, int numOfTabs){
         super(fm);
         this.numOfTabs = numOfTabs;
     }
@@ -24,7 +23,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                return new StringFragment(f);
+                return new StringFragment();
             case 1:
                 return new PercussionFragment();
             case 2:

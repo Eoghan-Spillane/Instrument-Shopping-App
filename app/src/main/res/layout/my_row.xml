@@ -36,6 +36,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:text="Item Name"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/textInstrumentPrice"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textInstrumentImage"
@@ -56,13 +57,9 @@
                 android:id="@+id/textInstrumentCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="24dp"
                 android:text="Item Code"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textInstumentName"
-                app:layout_constraintTop_toBottomOf="@+id/textInstumentName"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintStart_toEndOf="@+id/textView5" />
 
             <Button
                 android:id="@+id/textInstrumentBuy"
@@ -72,6 +69,23 @@
                 android:text="Add To Cart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textInstrumentPrice" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="€"
+                app:layout_constraintEnd_toStartOf="@+id/textInstrumentPrice"
+                app:layout_constraintTop_toTopOf="@+id/textInstrumentPrice" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Item Code: "
+                app:layout_constraintStart_toStartOf="@+id/textInstumentName"
+                app:layout_constraintTop_toBottomOf="@+id/textInstumentName" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
     <string-array name="InstrumentsStringNames">
         <item>Violin</item>
         <item>Piano</item>
-        <item>HurdyGurdy</item>
+        <item>Hurdy-Gurdy</item>
         <item>Guitar</item>
         <item>Cello</item>
     </string-array>
@@ -37,4 +37,53 @@
         <item>75</item>
         <item>350</item>
     </string-array>
+    
+    <string-array name="InstrumentPercussionNames">
+        <item>Triangle</item>
+        <item>Maracas</item>
+        <item>Drums</item>
+        <item>Box</item>
+        <item>Bongo</item>
+    </string-array>
+
+    <string-array name="InstrumentPercussionCode">
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+    </string-array>
+
+    <string-array name="InstrumentPercussionPrice">
+        <item>30</item>
+        <item>15</item>
+        <item>300</item>
+        <item>110</item>
+        <item>70</item>
+    </string-array>
+
+    <string-array name="InstrumentWindName">
+        <item>Saxophone</item>
+        <item>Pan Flute</item>
+        <item>Harmonica</item>
+        <item>Flute</item>
+        <item>Accordion</item>
+    </string-array>
+
+    <string-array name="InstrumentWindCode">
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+    </string-array>
+
+    <string-array name="InstrumentWindPrice">
+        <item>230</item>
+        <item>85</item>
+        <item>35</item>
+        <item>105</item>
+        <item>310</item>
+    </string-array>
+
 </resources>

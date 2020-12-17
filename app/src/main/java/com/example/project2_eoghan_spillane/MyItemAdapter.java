@@ -4,19 +4,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyStringAdapter extends RecyclerView.Adapter<MyStringAdapter.MyStringViewHolder> {
+public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringViewHolder> {
 
     String Names[], Codes[], Prices[];
     int Images[];
     Context context;
+    Button button;
 
-    public MyStringAdapter(Context ct, String names[], String codes[], String prices[], int images[]){
+    public MyItemAdapter(Context ct, String names[], String codes[], String prices[], int images[]){
         context = ct;
         Names = names;
         Codes = codes;
@@ -27,7 +29,7 @@ public class MyStringAdapter extends RecyclerView.Adapter<MyStringAdapter.MyStri
     @NonNull
     @Override
     public MyStringViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.my_row, parent, false);
 
         return new MyStringViewHolder(view);
@@ -49,6 +51,7 @@ public class MyStringAdapter extends RecyclerView.Adapter<MyStringAdapter.MyStri
     public class MyStringViewHolder extends RecyclerView.ViewHolder{
         TextView name, code, price;
         ImageView image;
+        Button button;
 
         public MyStringViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,6 +59,15 @@ public class MyStringAdapter extends RecyclerView.Adapter<MyStringAdapter.MyStri
             code = itemView.findViewById(R.id.textInstrumentCode);
             price = itemView.findViewById(R.id.textInstrumentPrice);
             image = itemView.findViewById(R.id.textInstrumentImage);
+            button = itemView.findViewById(R.id.textInstrumentBuy);
+
+            button.setOnClickListener(v -> {
+                printTitle();
+            });
+        }
+
+        public void printTitle(){
+            System.out.println(name.getText());
         }
     }
 
