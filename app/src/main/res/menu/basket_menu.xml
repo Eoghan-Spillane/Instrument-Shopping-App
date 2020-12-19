@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/optionBasketLoginSignup" android:title="@string/login_sign_up" />
+    <item android:id="@+id/optionBasketHomepage" android:title="@string/homepage"/>
+    <item android:id="@+id/optionBasketBasket" android:title="@string/refresh_basket"/>
+    <item android:id="@+id/optionBasketEmptyBasket" android:title="@string/empty_basket"/>
+</menu>

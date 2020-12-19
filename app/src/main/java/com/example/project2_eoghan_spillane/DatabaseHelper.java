@@ -2,6 +2,7 @@ package com.example.project2_eoghan_spillane;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -33,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + USER_TABLE + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, USERNAME TEXT, PASSWORD TEXT, ADDRESS TEXT)");
-        db.execSQL("create table " + PRODUCT_TABLE + "(ITEMCODE INTEGER PRIMARY KEY AUTOINCREMENT, ITEMNAME TEXT, ITEMPRICE REAL)");
+        db.execSQL("create table " + PRODUCT_TABLE + "(ITEMCODE INTEGER, ITEMNAME TEXT, ITEMPRICE REAL)");
     }
 
     @Override
@@ -124,6 +125,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }
+    }
 
+    public boolean addItem(String name, String code, String price){
+        int Code = 0;
+        int Price = 0;
+
+        try {
+            Code = Integer.parseInt(code);
+            Price = Integer.parseInt(price);
+        } catch(NumberFormatException nfe) {
+            System.out.println("Could not parse " + nfe);
+        }
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cValues = new ContentValues();
+        cValues.put(PRODUCT_COL_ITEMNAME, name);
+        cValues.put(PRODUCT_COL_ITEMCODE, Code);
+        cValues.put(PRODUCT_COL_ITEMPRICE, Price);
+
+        long newRowID = db.insert(PRODUCT_TABLE, null, cValues);
+
+        if (newRowID == -1){
+            return false;
+        } else{
+            return true;
+        }
+
+    }
+
+    public void clearBasket(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + PRODUCT_TABLE);
+        db.execSQL("create table " + PRODUCT_TABLE + "(ITEMCODE INTEGER, ITEMNAME TEXT, ITEMPRICE REAL)");
     }
 }

@@ -13,7 +13,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="stringed_instuments">Stringed Instuments</string>
     <string name="percussion_instuments">Percussion Instuments</string>
-    
+    <string name="refresh_basket">Refresh Basket</string>
+    <string name="empty_basket">Empty Basket</string>
+
     <string-array name="InstrumentsStringNames">
         <item>Violin</item>
         <item>Piano</item>

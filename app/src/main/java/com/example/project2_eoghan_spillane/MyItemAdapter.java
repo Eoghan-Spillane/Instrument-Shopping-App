@@ -1,12 +1,14 @@
 package com.example.project2_eoghan_spillane;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +19,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringVi
     int Images[];
     Context context;
     Button button;
+    DatabaseHelper database;
 
     public MyItemAdapter(Context ct, String names[], String codes[], String prices[], int images[]){
         context = ct;
@@ -52,6 +55,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringVi
         TextView name, code, price;
         ImageView image;
         Button button;
+        DatabaseHelper database = new DatabaseHelper(context);
 
         public MyStringViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,11 +67,26 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringVi
 
             button.setOnClickListener(v -> {
                 printTitle();
+                boolean success = AddItem(name.getText().toString(), code.getText().toString(), price.getText().toString());
+
+                if(success){
+                    Toast.makeText(context, "Item Added", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(context, "Error With Adding Item", Toast.LENGTH_LONG).show();
+                }
             });
         }
 
         public void printTitle(){
             System.out.println(name.getText());
+        }
+
+        public boolean AddItem(String name, String code, String price){
+            if(database.addItem(name, code, price)){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
 
