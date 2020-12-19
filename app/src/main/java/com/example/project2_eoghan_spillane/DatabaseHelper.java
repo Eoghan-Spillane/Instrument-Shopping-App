@@ -160,4 +160,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + PRODUCT_TABLE);
         db.execSQL("create table " + PRODUCT_TABLE + "(ITEMCODE INTEGER, ITEMNAME TEXT, ITEMPRICE REAL)");
     }
+
+
+    public void deleteItem(String toString) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("Delete FROM product_table WHERE ITEMNAME = '" + toString + "'");
+    }
 }

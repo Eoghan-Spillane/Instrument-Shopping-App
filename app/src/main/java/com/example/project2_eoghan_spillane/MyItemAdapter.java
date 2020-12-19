@@ -70,7 +70,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringVi
                 boolean success = AddItem(name.getText().toString(), code.getText().toString(), price.getText().toString());
 
                 if(success){
-                    Toast.makeText(context, "Item Added", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Item Added", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context, "Error With Adding Item", Toast.LENGTH_LONG).show();
                 }
@@ -89,5 +89,4 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyStringVi
             }
         }
     }
-
 }
