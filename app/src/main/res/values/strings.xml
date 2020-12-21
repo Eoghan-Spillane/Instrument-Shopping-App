@@ -23,6 +23,18 @@
     <string name="name">Name</string>
     <string name="pricebasket">Price</string>
     <string name="continue_shopping">Continue Shopping</string>
+    <string name="thank_you_for_shopping_with_us">Thank You For Shopping with US</string>
+    <string name="eircode">Eircode</string>
+    <string name="postal_address">Postal Address:</string>
+    <string name="three_digit_code">Three Digit Code</string>
+    <string name="security_code">Security Code:</string>
+    <string name="mm_yy">MM/YY</string>
+    <string name="expiry_date">Expiry Date:</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="card_number">Card Number:</string>
+    <string name="name_on_card">Name On Card:</string>
+    <string name="total_cost">Total Cost: €</string>
+    <string name="totalcost">totalCost</string>
 
     <string-array name="InstrumentsStringNames">
         <item>Violin</item>
